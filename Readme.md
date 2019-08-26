@@ -12,7 +12,7 @@ so it can still be used on standard subversion repos.
 ## Installation
 The original subwcrev has to be renamed to subwcrev_orig.exe.
 
-Build rubwcrev.exe with
+Build subwcrev.exe with
 ```
 C:\Python34\python.exe .\setup.py py2exe
 cp .\dist\* 'C:\Program Files\TortoiseSVN\bin\'
