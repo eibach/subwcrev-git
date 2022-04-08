@@ -14,7 +14,8 @@ parser.add_argument('dest',
 args = parser.parse_args()
 
 try:
-	label = subprocess.check_output("git -C " + args.workdir + " describe --always", shell=True).decode().strip()
+#	label = subprocess.check_output("git -C " + args.workdir + " describe --always", shell=True).decode().strip()
+	label = subprocess.check_output("git -C " + args.workdir + " rev-parse --short HEAD", shell=True).decode().strip()
 	revision = subprocess.check_output("git -C " + args.workdir + " svn find-rev " + label, shell=True).decode().strip()
 	print("Hash: " + label + " Revision: " + revision)
 	with open(args.src, "r") as src, open(args.dest, "w") as dest:
